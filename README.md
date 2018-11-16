@@ -3,13 +3,11 @@
 Per questa POC, e' stato creato un Dockerfile che prende una immagine Alpine Linux (immagine Docker molto piccola), aggiunge uno script.sh usato come CMD che fa un semplicissimo <code>ls</code> prendendo come argomento una variabile di ambiente <code>$ARGS</code>
 
 Le parti importanti da modificare sono:
-```name: test-cron-5m``` il nome del cronjob
+```name: test-cron-5m``` il nome del cronjob  
+```name: ARGS``` il nome della variabile utilizzata nello script <code>start.sh</code>  
+```schedule: '*/5 * * * *'``` la schedulazione del job, esattamente come un qualsiasi sistema linux  
 
-```name: ARGS``` il nome della variabile utilizzata nello script <code>start.sh</code>
-```schedule: '*/5 * * * *'``` la schedulazione del job, esattamente come un qualsiasi sistema linux 
-
-Per piu' dettagli su altre opzioni fare riferimento alla documentazione ufficiale
-
+Per piu' dettagli su altre opzioni fare riferimento alla documentazione ufficiale  
 https://docs.openshift.com/container-platform/3.9/dev_guide/cron_jobs.html
 
 ```apiVersion: batch/v1beta1
